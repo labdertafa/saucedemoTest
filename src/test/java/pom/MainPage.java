@@ -12,6 +12,8 @@ public class MainPage {
     private final Map<String, JsonLocator> mainpageLocators;
 
     private final String pageTittleKey = "pageTittle";
+    private final String selectOrderKey = "orderComboBox";
+    private final String firstProductKey = "firstProductInList";
 
     public MainPage(String pageDefinitionFilePath, ElementInteraction elementInteraction) throws IOException {
         this.elementInteraction = elementInteraction;
@@ -26,5 +28,15 @@ public class MainPage {
     public void clickProduct(String nombreLocalizador) throws Exception {
         JsonLocator jsonLocator = JsonLocatorManager.getLocator(this.mainpageLocators, nombreLocalizador);
         this.elementInteraction.click(jsonLocator);
+    }
+
+    public void selectOrder(String choisedOrder) throws Exception {
+        JsonLocator jsonLocator = JsonLocatorManager.getLocator(this.mainpageLocators, this.selectOrderKey);
+        this.elementInteraction.selectByVisibleText(jsonLocator, choisedOrder);
+    }
+
+    public String getFirstProduct() throws Exception {
+        JsonLocator jsonLocator = JsonLocatorManager.getLocator(this.mainpageLocators, this.firstProductKey);
+        return this.elementInteraction.getText(jsonLocator);
     }
 }

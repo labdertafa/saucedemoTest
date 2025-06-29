@@ -9,6 +9,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import util.JsonLocator;
 
@@ -90,6 +91,23 @@ public class SeleniumElementInteraction implements ElementInteraction {
     public String getText(JsonLocator jsonLocator) throws Exception {
         WebElement webElement = this.findElement(jsonLocator);
         return webElement.getText();
+    }
+
+    private Select findSelect(JsonLocator jsonLocator) throws Exception {
+        WebElement webElement = this.findElement(jsonLocator);
+        return new Select(webElement);
+    }
+
+    @Override
+    public void selectByVisibleText(JsonLocator jsonLocator, String text) throws Exception {
+        Select select = this.findSelect(jsonLocator);
+        select.selectByVisibleText(text);
+    }
+
+    @Override
+    public void selectByValue(JsonLocator jsonLocator, String value) throws Exception {
+        Select select = this.findSelect(jsonLocator);
+        select.selectByValue(value);
     }
 
     @Override

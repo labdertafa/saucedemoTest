@@ -8,7 +8,7 @@ public class EdgeDriverManager extends DriverManager {
     protected void createDriver() {
         EdgeOptions options = new EdgeOptions();
         options.addArguments("--disable-notifications");
-        options.addArguments("--headless");
+        // options.addArguments("--headless");
 
         driver = new EdgeDriver(options);
     }
