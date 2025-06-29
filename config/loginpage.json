@@ -1,0 +1,22 @@
+{
+  "acceptedUsername": {
+    "getFieldBy": "xpath",
+    "valueToFind": "/html/body/div/div/div[2]/div[2]/div/div[1]/h4"
+  },
+  "usernameField": {
+    "getFieldBy": "id",
+    "valueToFind": "user-name"
+  },
+  "passwordField": {
+    "getFieldBy": "id",
+    "valueToFind": "password"
+  },
+  "loginButton": {
+    "getFieldBy": "id",
+    "valueToFind": "login-button"
+  },
+  "errorMessage": {
+    "getFieldBy": "tagName",
+    "valueToFind": "h3"
+  }
+}

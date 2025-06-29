@@ -1,0 +1,6 @@
+{
+  "productName": {
+    "getFieldBy": "cssSelector",
+    "valueToFind": ".inventory_details_name.large_size"
+  }
+}
